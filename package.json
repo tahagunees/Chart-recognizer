@@ -8,7 +8,11 @@
     "build": "mastra build",
     "start": "node src/server.js",
     "web": "concurrently \"mastra dev\" \"npm run start\"",
-    "chat": "concurrently \"mastra dev\" \"node src/chatServer.js\""
+    "chat": "concurrently \"mastra dev\" \"node src/chatServer.js\"",
+    "telegram": "node src/telegramBot.js",
+    "telegram:webhook": "node src/webhookBot.js",
+    "combined": "node src/combinedServer.js",
+    "all": "node src/startAll.js"
   },
   "keywords": [],
   "author": "",
@@ -23,10 +27,11 @@
     "@mastra/core": "^0.9.4-alpha.4",
     "@mastra/libsql": "^0.0.4-alpha.4",
     "@mastra/memory": "^0.3.4-alpha.4",
-    "concurrently": "^9.1.2",
     "cors": "^2.8.5",
     "express": "^5.1.0",
+    "mongodb": "^6.16.0",
     "node-fetch": "^2.7.0",
+    "node-telegram-bot-api": "^0.66.0",
     "pdf-parse": "^1.1.1",
     "sharp": "^0.34.1",
     "tesseract.js": "^6.0.1",
@@ -35,6 +40,7 @@
   },
   "devDependencies": {
     "@types/node": "^22.15.18",
+    "concurrently": "^9.1.2",
     "mastra": "^0.6.3-alpha.6",
     "typescript": "^5.8.3"
   }
